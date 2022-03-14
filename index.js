@@ -30,6 +30,40 @@ function findNInFibonacci(n) {
   }
 }
 
+function bruteForceCaesarCode(stringToDecode) {
+  let stringInArray = [];
+  let tempString = stringToDecode;
+
+  const stringLength = stringToDecode.length;
+
+  stringInArray = tempString.split("");
+
+  let tempArray = [];
+
+  for (let i = 1; i < 26; ++i) {
+    for (let j = 0; j < stringLength; ++j) {
+      tempArray[j] = tempString.charCodeAt(j) + 1;
+      stringInArray[j] = String.fromCharCode(tempArray[j]);
+    }
+    tempString = stringInArray.join("");
+    console.log(tempString);
+  }
+
+  // const alphabet = "abcdefghijklmnopqrstuvwxyz";
+  // let tempArray = stringToDecode;
+
+  // for (let i = 0; i < 26; ++i) {
+  //   for (let j = 0; j < stringToDecode.length; ++j) {
+  //     if (tempArray.charAt(j) === alphabet.charAt(i)) {
+  //       const tempIndex = tempArray.indexOf(tempArray.charAt(j));
+  //       tempArray.replace(tempArray.charAt(j), alphabet.charAt(i + 1));
+  //       console.log(tempArray);
+  //     }
+  //   }
+  // }
+}
+
 findCircleArea(3);
 whenIsFirstOfJanuary();
 findNInFibonacci(8);
+bruteForceCaesarCode("dylan");
