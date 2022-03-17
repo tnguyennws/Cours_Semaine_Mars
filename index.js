@@ -63,7 +63,26 @@ function bruteForceCaesarCode(stringToDecode) {
   // }
 }
 
-findCircleArea(3);
-whenIsFirstOfJanuary();
-findNInFibonacci(8);
-bruteForceCaesarCode("dylan");
+function bruteforce(str) {
+  let decryptedString = "";
+  console.log("Voici les résultats :\n");
+  const tab = "abcdefghijklmnopqrstuvwxyz";
+  for (let i = 0; i < 25; i++) {
+    for (let x = 0; x < str.length; x++) {
+      let c = str.charAt(x);
+      let position = tab.indexOf(c);
+      let decalage = (position + i) % 25;
+      decryptedString += tab[decalage];
+    }
+    console.log(decryptedString);
+    console.log("\n");
+    decryptedString = "";
+  }
+}
+
+bruteforce("caesar");
+
+// findCircleArea(3);
+// whenIsFirstOfJanuary();
+// findNInFibonacci(8);
+// bruteForceCaesarCode("dylan");
